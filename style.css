@@ -2,84 +2,85 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  line-height: 1.6;
   color: #222;
+  background: #ffffff;
+  line-height: 1.7;
 }
 
 .header {
   position: sticky;
   top: 0;
-  background: #0b5ed7;
+  background: #0a2540;
   color: #fff;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .header a {
   color: #fff;
-  margin-left: 15px;
+  margin-left: 20px;
   text-decoration: none;
 }
 
-.slider {
+.hero {
   position: relative;
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
 }
 
-.slides {
-  display: flex;
-  height: 100%;
-  animation: slide 25s infinite;
-}
-
-.slides img {
+.slider img {
+  position: absolute;
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
-  100% { transform: translateX(-400%); }
+.slider img.active {
+  opacity: 1;
 }
 
-.slider-content {
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.6);
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 30px;
   text-align: center;
-  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  max-width: 900px;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 20px 0;
+  font-size: 1.1rem;
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: 14px 26px;
   border: none;
   cursor: pointer;
-  margin: 5px;
   font-size: 16px;
 }
 
 .primary {
-  background: #ffc107;
+  background: #ff9800;
   color: #000;
 }
 
@@ -90,37 +91,60 @@ body {
 }
 
 .section {
-  padding: 50px 20px;
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
   text-align: center;
 }
 
-.cards {
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.emotion p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.help-cards {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 25px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.card {
+.help-card {
   border: 1px solid #ddd;
-  padding: 25px;
-  max-width: 320px;
+  padding: 30px;
+  max-width: 420px;
 }
 
-.amounts button {
+.highlight {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #d84315;
+}
+
+.donation-amounts button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 12px 22px;
 }
 
 .ads {
   background: #f4f4f4;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
+  color: #777;
 }
 
 .footer {
-  background: #222;
+  background: #0a2540;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
+}
+
+.footer a {
+  color: #ffcc80;
 }
